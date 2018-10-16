@@ -1,5 +1,51 @@
 <app-card titulo="Cadastrar">
-  <p>
-    cadastrar works!
-  </p>
+    <form [formGroup]="cadastroForm">
+
+      <mat-form-field class="col-12 mt-3">
+        <input matInput placeholder="Nome" formControlName="nome" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="get('nome').errors?.required">
+          Nome é <strong>obrigatório</strong>
+        </mat-error>
+        <mat-error *ngIf="get('nome').errors?.minlength">
+          Nome deve conter no minímo <strong>8</strong> caracteres
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="col-12 mt-3">
+        <input matInput placeholder="Email" formControlName="email" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="get('email').errors?.required">
+          Email é <strong>obrigatório</strong>
+        </mat-error>
+        <mat-error *ngIf="get('email').errors?.email">
+          Email deve ser um email <strong>válido</strong>
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field class="col-12 mt-3">
+        <input matInput placeholder="Senha" formControlName="senha" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="get('senha').errors?.required">
+          Senha é <strong>obrigatório</strong>
+        </mat-error>
+        <mat-error *ngIf="get('senha').errors?.minlength">
+          Senha deve conter no minímo <strong>8</strong> caracteres
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="col-12 mt-3">
+        <input matInput placeholder="Confirmar Senha" formControlName="confirmarSenha" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="get('confirmarSenha').errors?.required">
+          Confirmar Senha é <strong>obrigatório</strong>
+        </mat-error>
+        <mat-error *ngIf="get('confirmarSenha').errors?.minlength">
+          Confirmar Senha deve conter no minímo <strong>8</strong> caracteres
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <span *ngIf="!!errorMsg" style="color: red">{{ errorMsg }}</span>
+
+    <button mat-raised-button class="btn-block btn-info mt-4" (click)="cadastrar(cadastroForm)">Cadastrar</button>
+
+    <br /><br />
+    
+    <a routerLink="/entrar" class="col-12 btn-outline-info blockquote-footer">Já tem cadastro? Entrar agora</a>
 </app-card>
