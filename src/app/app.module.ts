@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatInputModule,
   MatButtonModule,
+  MatIconModule,
+  MatTooltipModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +30,9 @@ import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

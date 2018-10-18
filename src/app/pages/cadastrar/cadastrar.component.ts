@@ -15,6 +15,7 @@ export class CadastrarComponent implements OnInit {
   cadastroForm: FormGroup;
   matcher: ErrorStateMatcher = new MyErrorStateMatcher();
   errorMsg: String = '';
+  hidePassword: Boolean = true;
 
   constructor(
     private fb: FormBuilder,
