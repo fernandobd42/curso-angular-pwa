@@ -1,5 +1,20 @@
 <app-card titulo="Entrar">
-  <p>
-    entrar works!
-  </p>
+  <form [formGroup]="entrarForm">
+
+    <span class="text-muted">Os campos com sufixo asterisco (*) são obrigatórios</span>
+
+    <hr>
+
+    <mat-form-field class="col-12">
+      <input matInput placeholder="Email *" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="col-12 mt-3">
+      <input matInput placeholder="Senha *" formControlName="senha">
+    </mat-form-field>
+
+  </form>
+
+  <button mat-raised-button class="btn-block btn-info mt-4" (click)="entrar(entrarForm)">Entrar</button>
+
 </app-card>

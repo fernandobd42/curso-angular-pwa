@@ -24,4 +24,8 @@ export class EntrarComponent implements OnInit {
     });
   }
 
+  entrar(form) {
+    console.log(form);
+  }
+
 }
