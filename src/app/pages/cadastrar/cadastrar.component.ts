@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
 import swal from 'sweetalert2';
 
@@ -51,7 +51,7 @@ export class CadastrarComponent implements OnInit {
     this.errorMsg = '';
 
     if (form.invalid) {
-      Object.values(form.controls).map((atributo: any) => {
+      Object.values(form.controls).map((atributo: FormControl) => {
         atributo.markAsTouched();
       });
 

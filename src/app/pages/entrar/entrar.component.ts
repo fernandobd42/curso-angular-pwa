@@ -1,6 +1,8 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material';
+import swal from 'sweetalert2';
+
 import { MyErrorStateMatcher } from 'src/app/utils/errorStateMatcher';
 
 @Component({
@@ -10,14 +12,13 @@ import { MyErrorStateMatcher } from 'src/app/utils/errorStateMatcher';
 })
 export class EntrarComponent implements OnInit {
   entrarForm: FormGroup;
+  errorMsg: String = '';
   matcher: ErrorStateMatcher = new MyErrorStateMatcher;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    console.log(this.entrarForm);
     this.inicialForm();
-    console.log(this.entrarForm);
   }
 
   inicialForm() {
@@ -36,7 +37,31 @@ export class EntrarComponent implements OnInit {
   }
 
   entrar(form) {
-    console.log(form);
+    this.errorMsg = '';
+    const values = form.value;
+
+    if (form.invalid) {
+      Object.values(form.controls).map((atributo: FormControl) => {
+        atributo.markAsTouched();
+      });
+
+      return;
+    }
+
+    if (values.email !== 'fernando@gmail.com' || values.senha !==  'senha123') {
+      this.errorMsg = 'Email ou senha estão incorretos';
+      return;
+    }
+
+    swal({
+      type: 'success',
+      title: 'Seja Bem Vindo a plataforma',
+      text: `${values.email}`,
+      showConfirmButton: false,
+      timer: 4000
+    });
+
+    console.log(values);
   }
 
 }
