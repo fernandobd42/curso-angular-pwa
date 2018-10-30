@@ -14,6 +14,7 @@ export class EntrarComponent implements OnInit {
   entrarForm: FormGroup;
   errorMsg: String = '';
   matcher: ErrorStateMatcher = new MyErrorStateMatcher;
+  hidePassword: Boolean = true;
 
   constructor(private fb: FormBuilder) { }
 
