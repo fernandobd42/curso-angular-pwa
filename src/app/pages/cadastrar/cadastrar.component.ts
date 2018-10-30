@@ -43,7 +43,7 @@ export class CadastrarComponent implements OnInit {
     });
   }
 
-  get(atributo) {
+  get(atributo: string) {
     return this.cadastroForm.controls[`${atributo}`];
   }
 

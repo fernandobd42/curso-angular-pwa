@@ -6,11 +6,23 @@
     <hr>
 
     <mat-form-field class="col-12">
-      <input matInput placeholder="Email *" formControlName="email">
+      <input matInput placeholder="Email *" formControlName="email" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="get('email').errors?.required">
+        Email é <strong>obrigatório</strong>
+      </mat-error>
+      <mat-error *ngIf="get('email').errors?.email">
+        Digite um email <strong>válido</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field class="col-12 mt-3">
-      <input matInput placeholder="Senha *" formControlName="senha">
+      <input matInput placeholder="Senha *" formControlName="senha" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="get('senha').errors?.required">
+        Senha é <strong>obrigatório</strong>
+      </mat-error>
+      <mat-error *ngIf="get('senha').errors?.minlength">
+        Senha deve conter no minímo <strong>8</strong> caracteres
+      </mat-error>
     </mat-form-field>
 
   </form>

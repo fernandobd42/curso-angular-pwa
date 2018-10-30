@@ -1,5 +1,7 @@
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { ErrorStateMatcher } from '@angular/material';
+import { MyErrorStateMatcher } from 'src/app/utils/errorStateMatcher';
 
 @Component({
   selector: 'app-entrar',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntrarComponent implements OnInit {
   entrarForm: FormGroup;
+  matcher: ErrorStateMatcher = new MyErrorStateMatcher;
 
   constructor(private fb: FormBuilder) { }
 
@@ -19,9 +22,17 @@ export class EntrarComponent implements OnInit {
 
   inicialForm() {
     this.entrarForm = this.fb.group({
-      email: [''],
-      senha: ['']
+      email: ['',
+        [Validators.required, Validators.email]
+      ],
+      senha: ['',
+        [Validators.required, Validators.minLength(8)]
+      ]
     });
+  }
+
+  get(atributo: string) {
+    return this.entrarForm.controls[`${atributo}`];
   }
 
   entrar(form) {
