@@ -1,5 +1,14 @@
 <app-card titulo="Recuperar Senha">
-  <p>
-    recuperar-senha works!
-  </p>
+
+  <mat-form-field class="col-12">
+    <input matInput placeholder="Enter your email" [formControl]="email" [errorStateMatcher]="matcher">
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button class="btn-block btn-info mt-4" (click)="recuperar(email)">Recuperar Senha</button>
+
+  <br /><br />
+
+  <a routerLink="/entrar" class="col-12 btn-outline-info blockquote-footer">Lembrou a senha? Entrar agora</a>
+
 </app-card>
