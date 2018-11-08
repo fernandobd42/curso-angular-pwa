@@ -45,10 +45,11 @@
           Confirmar Senha deve conter no minímo <strong>8</strong> caracteres
         </mat-error>
       </mat-form-field>
+      
+      <span *ngIf="!!errorMsg" style="color: red">{{ errorMsg }}</span>
+  
+      <button mat-raised-button class="btn-block btn-info mt-4" (click)="cadastrar(cadastroForm)">Cadastrar</button>
     </form>
-    <span *ngIf="!!errorMsg" style="color: red">{{ errorMsg }}</span>
-
-    <button mat-raised-button class="btn-block btn-info mt-4" (click)="cadastrar(cadastroForm)">Cadastrar</button>
 
     <br /><br />
     

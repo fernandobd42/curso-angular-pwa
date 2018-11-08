@@ -26,10 +26,10 @@
       </mat-error>
     </mat-form-field>
 
+    <span *ngIf="!!errorMsg" style="color: red">{{ errorMsg }}</span>
+  
+    <button mat-raised-button class="btn-block btn-info mt-4" (click)="entrar(entrarForm)">Entrar</button>
   </form>
-  <span *ngIf="!!errorMsg" style="color: red">{{ errorMsg }}</span>
-
-  <button mat-raised-button class="btn-block btn-info mt-4" (click)="entrar(entrarForm)">Entrar</button>
 
   <br /><br />
 
