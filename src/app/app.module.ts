@@ -8,7 +8,9 @@ import {
   MatIconModule,
   MatTooltipModule,
   MatMenuModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatSidenavModule,
+  MatRippleModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -40,7 +42,9 @@ import { MenuComponent } from './components/menu/menu.component';
     MatIconModule,
     MatTooltipModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSidenavModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
