@@ -6,7 +6,9 @@ import {
   MatInputModule,
   MatButtonModule,
   MatIconModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatMenuModule,
+  MatToolbarModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +18,7 @@ import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { EntrarComponent } from './pages/entrar/entrar.component';
 import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
 import { PainelControleComponent } from './pages/painel-controle/painel-controle.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { PainelControleComponent } from './pages/painel-controle/painel-controle
     CadastrarComponent,
     EntrarComponent,
     RecuperarSenhaComponent,
-    PainelControleComponent
+    PainelControleComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { PainelControleComponent } from './pages/painel-controle/painel-controle
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

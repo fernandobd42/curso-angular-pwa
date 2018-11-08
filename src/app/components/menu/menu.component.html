@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <span>Site</span>
+  
+  <span class="spacer"></span>
+  
+  <mat-icon mat-button [matMenuTriggerFor]="menu">menu</mat-icon>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+</mat-toolbar>  
+
+
+<ng-content></ng-content>
