@@ -15,6 +15,7 @@ import { CardComponent } from './components/card/card.component';
 import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { EntrarComponent } from './pages/entrar/entrar.component';
 import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
+import { PainelControleComponent } from './pages/painel-controle/painel-controle.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha
     CardComponent,
     CadastrarComponent,
     EntrarComponent,
-    RecuperarSenhaComponent
+    RecuperarSenhaComponent,
+    PainelControleComponent
   ],
   imports: [
     BrowserModule,

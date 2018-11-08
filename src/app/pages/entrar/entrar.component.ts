@@ -4,6 +4,7 @@ import { ErrorStateMatcher } from '@angular/material';
 import swal from 'sweetalert2';
 
 import { MyErrorStateMatcher } from 'src/app/utils/errorStateMatcher';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-entrar',
@@ -16,7 +17,10 @@ export class EntrarComponent implements OnInit {
   matcher: ErrorStateMatcher = new MyErrorStateMatcher;
   hidePassword: Boolean = true;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.inicialForm();
@@ -63,6 +67,7 @@ export class EntrarComponent implements OnInit {
     });
 
     console.log(values);
+    this.router.navigate(['/painel-controle']);
   }
 
 }
