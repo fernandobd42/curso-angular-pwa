@@ -22,6 +22,7 @@ import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha
 import { PainelControleComponent } from './pages/painel-controle/painel-controle.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ListarUsuariosComponent } from './pages/listar-usuarios/listar-usuarios.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ListarUsuariosComponent } from './pages/listar-usuarios/listar-usuarios
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
