@@ -5,3 +5,8 @@ table {
 .mat-form-field {
   font-size: 14px;
 }
+
+.table-row:hover {
+  cursor: pointer;
+  background: lightgrey;
+}

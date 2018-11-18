@@ -40,4 +40,7 @@ export class ListarUsuariosComponent implements OnInit {
     }
   }
 
+  getRowItem(item) {
+    console.log(item);
+  }
 }
