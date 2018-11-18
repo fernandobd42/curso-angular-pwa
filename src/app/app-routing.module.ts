@@ -6,6 +6,8 @@ import { EntrarComponent } from './pages/entrar/entrar.component';
 import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
 import { PainelControleComponent } from './pages/painel-controle/painel-controle.component';
 import { ListarUsuariosComponent } from './pages/listar-usuarios/listar-usuarios.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { UserResolver } from './resolver/user.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/cadastrar', pathMatch: 'full' },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'recuperar-senha', component: RecuperarSenhaComponent },
   { path: 'painel-controle', component: PainelControleComponent },
   { path: 'listar-usuarios', component: ListarUsuariosComponent },
+  { path: 'usuario/:id', component: UsuarioComponent, resolve: { user: UserResolver } },
   { path: '**', redirectTo: '/cadastrar'}
 ];
 

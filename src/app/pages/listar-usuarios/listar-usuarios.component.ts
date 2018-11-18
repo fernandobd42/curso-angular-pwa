@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ListarUsuariosService } from 'src/app/services/listar-usuarios.service';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { Router } from '@angular/router';
 
 export interface UserData {
   id: string;
@@ -21,7 +22,10 @@ export class ListarUsuariosComponent implements OnInit {
   displayedColumns: string[] = ['id', 'first_name', 'last_name'];
   dataSource: MatTableDataSource<UserData>;
 
-  constructor(private listarUsuariosAPI: ListarUsuariosService) { }
+  constructor(
+    private listarUsuariosAPI: ListarUsuariosService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
    this.listarUsuariosAPI.getUsersList().subscribe(users => {
@@ -40,7 +44,7 @@ export class ListarUsuariosComponent implements OnInit {
     }
   }
 
-  getRowItem(item) {
-    console.log(item);
+  getUserId(id) {
+    this.router.navigate(['/usuario/' + id]);
   }
 }

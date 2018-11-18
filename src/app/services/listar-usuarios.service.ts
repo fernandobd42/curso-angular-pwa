@@ -16,4 +16,8 @@ export class ListarUsuariosService {
 
     return this.http.get(this.url + '/users/', { params });
   }
+
+  getUser(id: string): Observable<any> {
+    return this.http.get(this.url + '/users/' + id);
+  }
 }

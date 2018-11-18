@@ -26,6 +26,7 @@ import { PainelControleComponent } from './pages/painel-controle/painel-controle
 import { MenuComponent } from './components/menu/menu.component';
 import { ListarUsuariosComponent } from './pages/listar-usuarios/listar-usuarios.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     RecuperarSenhaComponent,
     PainelControleComponent,
     MenuComponent,
-    ListarUsuariosComponent
+    ListarUsuariosComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
