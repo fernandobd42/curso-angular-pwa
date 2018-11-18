@@ -5,15 +5,14 @@
   
   <mat-icon class="cursor-pointer" matRipple mat-button [matMenuTriggerFor]="menu">menu</mat-icon>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
+    <button mat-menu-item routerLink="/entrar">Sair</button>
   </mat-menu>
 </mat-toolbar>  
 
 <mat-drawer-container class="sidenav-container" autosize hasBackdrop>
     <mat-drawer #drawer class="sidenav" mode="side">
-      <button mat-menu-item (click)="drawer.toggle()">Item 1</button>
-      <button mat-menu-item (click)="drawer.toggle()">Item 2</button>
+      <button mat-menu-item (click)="drawer.toggle()" routerLink="/painel-controle">Paiinel Controle</button>
+      <button mat-menu-item (click)="drawer.toggle()" routerLink="/listar-usuarios">Listar Usuários</button>
     </mat-drawer>
 
     <div class="sidenav-content">

@@ -5,6 +5,7 @@ import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { EntrarComponent } from './pages/entrar/entrar.component';
 import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
 import { PainelControleComponent } from './pages/painel-controle/painel-controle.component';
+import { ListarUsuariosComponent } from './pages/listar-usuarios/listar-usuarios.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/cadastrar', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'entrar', component: EntrarComponent },
   { path: 'recuperar-senha', component: RecuperarSenhaComponent },
   { path: 'painel-controle', component: PainelControleComponent },
+  { path: 'listar-usuarios', component: ListarUsuariosComponent },
   { path: '**', redirectTo: '/cadastrar'}
 ];
 

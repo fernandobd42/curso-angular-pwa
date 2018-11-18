@@ -21,6 +21,7 @@ import { EntrarComponent } from './pages/entrar/entrar.component';
 import { RecuperarSenhaComponent } from './pages/recuperar-senha/recuperar-senha.component';
 import { PainelControleComponent } from './pages/painel-controle/painel-controle.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ListarUsuariosComponent } from './pages/listar-usuarios/listar-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MenuComponent } from './components/menu/menu.component';
     EntrarComponent,
     RecuperarSenhaComponent,
     PainelControleComponent,
-    MenuComponent
+    MenuComponent,
+    ListarUsuariosComponent
   ],
   imports: [
     BrowserModule,
