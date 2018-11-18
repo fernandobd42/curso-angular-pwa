@@ -10,7 +10,10 @@ import {
   MatMenuModule,
   MatToolbarModule,
   MatSidenavModule,
-  MatRippleModule
+  MatRippleModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -48,7 +51,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatMenuModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatRippleModule
+    MatRippleModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

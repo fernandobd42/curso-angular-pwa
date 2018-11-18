@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,6 +12,8 @@ export class ListarUsuariosService {
   constructor(private http: HttpClient) { }
 
   getUsersList(): Observable<any> {
-    return this.http.get(this.url + '/users/' );
+    const params = new HttpParams().set('per_page', '12');
+
+    return this.http.get(this.url + '/users/', { params });
   }
 }
