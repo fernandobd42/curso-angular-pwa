@@ -38,7 +38,7 @@ import { UsuarioComponent } from './pages/usuario/usuario.component';
     PainelControleComponent,
     MenuComponent,
     ListarUsuariosComponent,
-    UsuarioComponent
+    UsuarioComponent,
   ],
   imports: [
     BrowserModule,

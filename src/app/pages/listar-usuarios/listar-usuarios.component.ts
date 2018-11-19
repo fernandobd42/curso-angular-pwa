@@ -25,7 +25,7 @@ export class ListarUsuariosComponent implements OnInit {
   constructor(
     private listarUsuariosAPI: ListarUsuariosService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit() {
    this.listarUsuariosAPI.getUsersList().subscribe(users => {
