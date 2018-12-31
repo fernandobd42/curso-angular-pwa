@@ -30,4 +30,8 @@ export class UsuarioComponent implements OnInit {
       ultimo_nome: dadosUsuario.last_name
     });
   }
+
+  getImg() {
+    return this.usuarioForm.value.img;
+  }
 }
