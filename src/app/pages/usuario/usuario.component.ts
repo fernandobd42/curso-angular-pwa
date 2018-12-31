@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,11 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) {
-    console.log(this.route.snapshot.data.user.data);
+  usuarioForm: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute
+  ) {
+    const user = this.route.snapshot.data.user.data;
+    this.initialForm(user);
    }
 
   ngOnInit() {
+    console.log(this.usuarioForm);
   }
 
+  initialForm(dadosUsuario) {
+    this.usuarioForm = this.fb.group({
+      img: dadosUsuario.avatar,
+      primeiro_nome: dadosUsuario.first_name,
+      ultimo_nome: dadosUsuario.last_name
+    });
+  }
 }
