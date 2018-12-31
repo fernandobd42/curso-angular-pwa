@@ -7,11 +7,16 @@
         </h2>
         <div class="card-body">
           <form [formGroup]="usuarioForm">
-            <img 
-              width="150"
-              height="150"
-              [src]="getImg()"
-            />
+            <div>
+              <input type="file" (change)="selectImg($event)" #fileInput class="d-none" />
+              <img 
+                [src]="getImg()"
+                (click)="fileInput.click()"
+                class="rounded-circle"
+                width="150"
+                height="150"
+              />
+            </div>
             <mat-form-field class="col-12 mt-3">
               <input matInput placeholder="Primeiro nome" formControlName="primeiro_nome">
             </mat-form-field>

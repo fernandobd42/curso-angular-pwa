@@ -34,4 +34,16 @@ export class UsuarioComponent implements OnInit {
   getImg() {
     return this.usuarioForm.value.img;
   }
+
+  selectImg(event) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]);
+
+      reader.onload = (res: any) => {
+        this.usuarioForm.get('img').setValue(res.target.result);
+      };
+    }
+  }
 }
